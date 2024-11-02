@@ -2,7 +2,7 @@ from currency_converter import currency_converter
 
 
 def get_base_currency(message, bot, chat_id):
-    msg = bot.send_message(chat_id, "Введите код базовой валютs (например, RUB):")
+    msg = bot.send_message(chat_id, "Введите код базовой валюты (например, RUB):")
     bot.register_next_step_handler(msg, get_other_target_currency, bot, chat_id)
 
 
