@@ -5,7 +5,7 @@ from general_functions import get_base_currency
 from dotenv import load_dotenv
 
 load_dotenv()
-tg_token = os.getenv("TG_BOT_TOKEN")
+tg_token = os.getenv("TG_BOT_TOKEN", '7378421500:AAET_IsTA9VsfIhNiG24U_asl9TRQ4rkssk')
 bot = telebot.TeleBot(tg_token)
 
 
