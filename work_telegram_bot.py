@@ -23,6 +23,34 @@ def currency_converter(message):
     get_target_currency(message, bot, base_currency, chat_id)
 
 
+@bot.message_handler(commands=["usd"])
+def currency_converter(message):
+    base_currency = "USD"
+    chat_id = message.chat.id
+    get_target_currency(message, bot, base_currency, chat_id)
+
+
+@bot.message_handler(commands=["cny"])
+def currency_converter(message):
+    base_currency = "CNY"
+    chat_id = message.chat.id
+    get_target_currency(message, bot, base_currency, chat_id)
+
+
+@bot.message_handler(commands=["rub"])
+def currency_converter(message):
+    base_currency = "RUB"
+    chat_id = message.chat.id
+    get_target_currency(message, bot, base_currency, chat_id)
+
+
+@bot.message_handler(commands=["jpy"])
+def currency_converter(message):
+    base_currency = "JPY"
+    chat_id = message.chat.id
+    get_target_currency(message, bot, base_currency, chat_id)
+
+
 @bot.message_handler(commands=["othercurrency"])
 def currency_converter(message):
     chat_id = message.chat.id
