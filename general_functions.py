@@ -13,6 +13,7 @@ def get_other_target_currency(message, bot, chat_id):
 
 
 def get_target_currency(message, bot, base_currency, chat_id):
+    bot.send_message(chat_id, f"Код базовой валюты: {base_currency}")
     msg = bot.send_message(chat_id, "Введите код целевой валюты (например, USD):")
     bot.register_next_step_handler(msg, get_amount, bot, base_currency, chat_id)
 
@@ -32,5 +33,6 @@ def currency_converter_handler(message, bot, base_currency, target_currency, cha
         bot.send_message(chat_id, answer)
     except ValueError:
         bot.send_message(
-            chat_id, "Неверная сумма. Пожалуйста, введите числовое значение."
+            chat_id,
+            "Неверная сумма. Пожалуйста, введите числовое значение. Выберите заново команду.",
         )

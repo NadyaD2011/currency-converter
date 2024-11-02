@@ -13,6 +13,8 @@ def currency_converter(base_currency, target_currency, amount):
             converted_amount = amount * target_rate
             return f"Сконвертированная сумма: {converted_amount:.2f} {target_currency}"
         else:
-            return f"Неверный код целевой валюты: {target_currency}"
+            return f"Неверный код целевой валюты: {target_currency}. Выберите заново команду."
     except requests.RequestException as error:
-        return f"Ошибка при получении данных о валюте: {error}"
+        return (
+            f"Ошибка при получении данных о валюте: {error}. Выберите заново команду."
+        )
